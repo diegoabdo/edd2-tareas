@@ -1,16 +1,14 @@
-
-
+//Christian Andrés Villegas Velasco
+//Diego José Abdo Estrada
 export class NodeTree {
     private data: number;
-    private leftChild: NodeTree;
-    private rightChild: NodeTree;
-    private parent: NodeTree | null;
+    private leftChild!: NodeTree;
+    private rightChild!: NodeTree;
+    private parent!: NodeTree;
 
-    constructor(data: number) {
+    constructor(data: number, isNull?:boolean) {
         this.data = data;
-        this.leftChild = new NullNodeTree();
-        this.rightChild = new NullNodeTree(); 
-        this.parent = null;
+
     }
 
     public getData(): number {
@@ -33,11 +31,14 @@ export class NodeTree {
         this.rightChild = rightChild;
     }
 
-    public setParent(parent: NodeTree | null): void {
+    public setParent(parent: NodeTree): void {
         this.parent = parent;
     }
 }
 
+
+
+/*
 export class NullNodeTree extends NodeTree {
     constructor() {
         super(NaN); // Nodo sin datos
@@ -54,4 +55,9 @@ export class NullNodeTree extends NodeTree {
     public setRightChild(rightChild: NodeTree): void {
         throw new Error("Cannot set right child on a NullNodeTree");
     }
+
+    public getNull():null{
+        return null
+    }
 }
+*/
